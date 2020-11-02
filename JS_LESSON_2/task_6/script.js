@@ -1,13 +1,11 @@
 const dialog = () => {
-    let response;
     let name;
 
-    response = confirm('Виски?');
-
-    if (response) {
+    if (confirm('Виски?')) {
         name = prompt('Как к вам обращаться сэр?');
     }
-    return name === undefined ?
+
+    name === undefined ?
         alert('Для меня вы никто') :
         alert(`Добро пожаловать в клуб ${name}`);
 };
