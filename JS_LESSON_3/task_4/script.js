@@ -15,10 +15,13 @@ let n = 3;
 // }
 
 const getDeclension = (num) => {
-    return num === 1 ?
-        console.log(`${num} апельсин`) :
-        num > 1 && num <= 4 ? console.log(`${num} апельсина`) :
+    if (num === 1) {
+        console.log(`${num} апельсин`)
+    } else if (num > 1 && num <= 4) {
+        console.log(`${num} апельсина`)
+    } else {
         console.log(`${num} апельсинов`)
+    }
 };
 
 getDeclension(n);
