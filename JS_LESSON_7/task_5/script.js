@@ -7,6 +7,10 @@ const target = [];
 //     }
 // }
 
-source.forEach(int => int % 2 === 0 ? target.push(int) : int);
+source.forEach(int => {
+    if (int % 2 === 0) {
+        target.push(int)
+    }
+});
 
 console.log(target);
