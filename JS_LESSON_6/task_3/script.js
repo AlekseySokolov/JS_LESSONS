@@ -1,21 +1,13 @@
 function Calculator(int) {
-    this.result = int;
+    let result = int;
 
-    this.add = function(int2) {
-        return this.result += int2;
-    };
+    this.add = int2 => result += int2;
 
-    this.take = function(int2) {
-        return this.result -= int2;
-    };
+    this.take = int2 => result -= int2;
 
-    this.div = function(int2) {
-        return  this.result /= int2;
-    };
+    this.div = int2 => result /= int2;
 
-    this.mul = function(int2) {
-        return this.result *= int2;
-    };
+    this.mul = int2 => result *= int2;
 }
 
 let calculator = new Calculator(1);
