@@ -2,24 +2,14 @@ const validator = (num) => num >= 18;
 
 const giveMeNumber = (validator) => {
     const userInput =  prompt('Так сколько вам лет?');
+    const errorInput  = userInput === '' || userInput === null || isNaN(Number(userInput));
+    const conditions = typeof Number(userInput) === 'number' && validator(userInput);
 
-    if (userInput === '') {
-        alert('Что значит ok?');
+    if (errorInput) {
         return giveMeNumber(validator);
     }
-    if (userInput === null) {
-        alert('Отказываетесь отвечать?... пошел вон!');
-        return;
-    }
-    if (isNaN(Number(userInput))) {
-        alert('Непонял...');
-      return giveMeNumber(validator);
-    }
 
-    const conditions = typeof Number(userInput) === 'number' &&
-        validator(userInput);
-
-   return conditions ? alert('Проходите!') : alert('Пошел вон!');
+   conditions ? alert('Проходите!') : alert('Пошел вон!');
 };
 
 giveMeNumber(validator);

@@ -1,7 +1,15 @@
-const giveMeNumber = () => {
-    const userInput =  prompt('Введите число! ...я бдю');
-    const conditions = typeof Number(userInput) === 'number' && !isNaN(Number(userInput));
-    conditions ? alert('Good boy!') : giveMeNumber();
+const giveMeNumber = (label) => {
+    const userInput =  prompt(label);
+    const conditions = typeof Number(userInput) === 'number'
+        && !isNaN(Number(userInput))
+        && userInput !== '';
+
+    if (conditions) {
+        return userInput;
+    } else {
+        return giveMeNumber(label);
+    }
 };
 
-giveMeNumber();
+const number = giveMeNumber('Введите число! ...я бдю');
+console.log(number);
